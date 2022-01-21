@@ -20,7 +20,7 @@
                     <figure>
                         <img alt="" class="show-transparency" src="{{ image.urls.thumb }}" style="max-height: 165px;" />
                         <figcaption>
-                            <span>Image</span>
+                            <span>{{ image.description|default:image.id|ellipsistrim:60 }}</span>
                         </figcaption>
                     </figure>
                 </div>
