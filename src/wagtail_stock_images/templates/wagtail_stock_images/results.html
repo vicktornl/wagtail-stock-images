@@ -29,7 +29,7 @@
     </ul>
 {% else %}
     {% if is_searching %}
-        <p>Is searching</p>
+        <h2 role="alert">{% blocktrans %}Sorry, no images match "<em>{{ query_string }}</em>"{% endblocktrans %}</h2>
     {% else %}
         {% blocktrans %}You haven't entered any search keywords yet.{% endblocktrans %}
     {% endif %}
