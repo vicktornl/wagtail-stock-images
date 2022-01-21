@@ -1,0 +1,3 @@
+# Wagtail Stock Images
+
+## Settings

@@ -1,0 +1,10 @@
+exclude *
+recursive-exclude * *
+
+include MANIFEST.in
+
+graft src/wagtail_stock_images
+
+global-exclude .DS_Store
+global-exclude *.pyc
+global-exclude __pycache__

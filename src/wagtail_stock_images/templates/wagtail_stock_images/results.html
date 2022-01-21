@@ -1,0 +1,36 @@
+{% load i18n l10n wagtailadmin_tags %}
+
+{% if images %}
+    {% if is_searching %}
+        <h2 role="alert">
+        {% blocktrans count counter=images|length %}
+            There is {{ counter }} match
+        {% plural %}
+            There are {{ counter }} matches
+        {% endblocktrans %}
+        </h2>
+    {% else %}
+        <h2>{% trans "Latest images" %}</h2>
+    {% endif %}
+
+    <ul class="listing horiz images">
+        {% for image in images %}
+            <li>
+                <div class="image-choice">
+                    <figure>
+                        <img alt="" class="show-transparency" src="{{ image.urls.thumb }}" style="max-height: 165px;" />
+                        <figcaption>
+                            <span>Image</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    {% if is_searching %}
+        <p>Is searching</p>
+    {% else %}
+        {% blocktrans %}You haven't entered any search keywords yet.{% endblocktrans %}
+    {% endif %}
+{% endif %}
