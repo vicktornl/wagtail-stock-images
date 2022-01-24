@@ -16,14 +16,14 @@
     <ul class="listing horiz images">
         {% for image in images %}
             <li>
-                <div class="image-choice">
+                <a class="image-choice" href="{% url 'wagtail-stock-images-save' image.id %}">
                     <figure>
-                        <img alt="" class="show-transparency" src="{{ image.urls.thumb }}" style="max-height: 165px;" />
+                        <img alt="" class="show-transparency" src="{{ image.thumbnail }}" style="max-height: 165px;" />
                         <figcaption>
-                            <span>{{ image.description|default:image.id|ellipsistrim:60 }}</span>
+                            <span>{{ image.title|ellipsistrim:60 }}</span>
                         </figcaption>
                     </figure>
-                </div>
+                </a>
             </li>
         {% endfor %}
     </ul>

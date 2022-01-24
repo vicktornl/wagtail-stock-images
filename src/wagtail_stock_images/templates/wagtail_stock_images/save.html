@@ -1,0 +1,15 @@
+{% extends "wagtailadmin/base.html" %}
+
+{% load i18n wagtailadmin_tags %}
+
+{% block titletag %}{% trans "Saving image" %} {{ image.id }}{% endblock %}
+
+{% block content %}
+    {% trans "Saving" as editing_str %}
+
+    {% include "wagtailadmin/shared/header.html" with title=editing_str subtitle=image.id icon="image" %}
+
+    <div class="nice-padding">
+        {{ image.id }}
+    </div>
+{% endblock %}

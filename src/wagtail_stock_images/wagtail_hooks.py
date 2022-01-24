@@ -23,6 +23,11 @@ class WagtailStockImagesMenuItem(MenuItem):
 def register_urls():
     return [
         path(
+            "%s/<str:id>/" % wagtail_stock_images_settings.PATH_PREFIX,
+            views.SaveStockImagesView.as_view(),
+            name="wagtail-stock-images-save",
+        ),
+        path(
             "%s/" % wagtail_stock_images_settings.PATH_PREFIX,
             views.SearchStockImagesView.as_view(),
             name="wagtail-stock-images-search",
