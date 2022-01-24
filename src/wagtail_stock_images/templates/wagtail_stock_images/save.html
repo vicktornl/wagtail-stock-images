@@ -9,7 +9,44 @@
 
     {% include "wagtailadmin/shared/header.html" with title=editing_str subtitle=image.id icon="image" %}
 
-    <div class="nice-padding">
-        {{ image.id }}
-    </div>
+    <form action="{% url 'wagtail-stock-images-save' image.id %}" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="row row-flush nice-padding">
+            <div class="col6">
+                <ul class="fields">
+                    {% for field in form %}
+                        {% if field.is_hidden %}
+                            {{ field }}
+                        {% else %}
+                            {% include "wagtailadmin/shared/field_as_li.html" with li_classes="label-above label-uppercase" %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <div class="u-hidden@xs">
+                    <button type="submit" name="render" class="button">{% trans 'Save' %}</button>
+                </div>
+            </div>
+
+            <div class="col6">
+                <img src="{{ image.url }}" alt="{{ image.title }}" />
+            </div>
+
+            <div class="row row-flush nice-padding u-hidden@sm">
+                <div class="col5">
+                    <button type="submit" name="render" class="button">{% trans 'Save' %}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    {% include "wagtailadmin/pages/_editor_js.html" %}
+    {{ form.media.js }}
+{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    {{ form.media.css }}
 {% endblock %}

@@ -4,6 +4,9 @@
 
 Search stock images (e.g. via Unsplash) and save them to your Wagtail image library.
 
+![Search](./docs/search.jpg)
+![Saving](./docs/saving.jpg)
+
 ## Requirements
 
 - Python 3
