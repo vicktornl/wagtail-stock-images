@@ -1,6 +1,7 @@
 # Wagtail Stock Images
 
 [![Version](https://img.shields.io/pypi/v/wagtail-stock-images.svg?style=flat)](https://pypi.python.org/pypi/wagtail-stock-images/)
+![CI](https://github.com/vicktornl/wagtail-stock-images/actions/workflows/ci.yml/badge.svg)
 
 Search stock images (e.g. via Unsplash) and save them to your Wagtail image library.
 

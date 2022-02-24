@@ -5,7 +5,10 @@ def pytest_configure():
     settings.configure(
         CACHES={"default": {"BACKEND": "django.core.cache.backends.dummy.DummyCache"}},
         DATABASES={
-            "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite",}
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": "db.sqlite",
+            }
         },
         INSTALLED_APPS=[
             "wagtail.embeds",
@@ -36,4 +39,5 @@ def pytest_configure():
             "django.contrib.messages.middleware.MessageMiddleware",
             "django.middleware.clickjacking.XFrameOptionsMiddleware",
         ],
+        SECRET_KEY="tests",
     )
