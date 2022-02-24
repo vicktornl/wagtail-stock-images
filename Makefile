@@ -6,16 +6,15 @@ clean:
 	find . -name '*.egg-info' -exec rm -rf {} +
 
 format:
-	black src
-	isort src
+	black .
+	isort .
 
 install:
 	pip install -e .[test]
 
 test:
-	py.test tests
+	py.test
 
 wheel:
-	rm -rf dist/
 	pip install wheel
 	python setup.py sdist bdist_wheel

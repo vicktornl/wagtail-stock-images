@@ -8,10 +8,7 @@ dist/
 *.pyc
 __pycache__/
 .pytest_cache/
-
-# Frontend
-node_modules/
-yarn.lock
+.tox/
 
 # IDE
 .vscode/
